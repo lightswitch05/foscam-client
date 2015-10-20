@@ -1,6 +1,8 @@
 Node Foscam Client
 ==================
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/lightswitch05/foscam-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 Node client sdk for current HD foscam cameras that stream H.264 like the FI9821W, FI9831P, etc..
 
 This is an early release and is not a fully functional SDK. Please open tickets and submit pull request as bugs are found.
