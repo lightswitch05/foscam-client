@@ -41,7 +41,9 @@ snapPicture.then(function(binaryJpg){
 
 ```
 
-Generate Docs
--------------
+Docs
+----
 
-`npm run docs`
+Docs: http://lightswitch05.github.io/foscam-client
+
+Generate Docs: `npm run docs`
