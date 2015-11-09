@@ -2,7 +2,7 @@
   "name": "foscam-client",
   "version": "0.0.2",
   "description": "Node client sdk for the current H.264 Foscam cameras like the FI9821W, FI9831P, etc.P",
-  "main": "foscam.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "./node_modules/.bin/jsdoc --configure .jsdoc.json"
