@@ -3,6 +3,7 @@ Node Foscam Client
 
 [![npm version](https://badge.fury.io/js/foscam-client.svg)](https://badge.fury.io/js/foscam-client)
 [![Build Status](https://travis-ci.org/lightswitch05/foscam-client.svg)](https://travis-ci.org/lightswitch05/foscam-client)
+[![Coverage Status](https://coveralls.io/repos/lightswitch05/foscam-client/badge.svg?branch=master&service=github)](https://coveralls.io/github/lightswitch05/foscam-client?branch=master)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/lightswitch05/foscam-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Dependency Status](https://gemnasium.com/lightswitch05/foscam-client.svg)](https://gemnasium.com/lightswitch05/foscam-client)
 
