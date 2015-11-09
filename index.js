@@ -1,3 +1,5 @@
+'use strict';
+
 var Foscam = require('./lib/index');
 var config = require('./configs');
 

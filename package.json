@@ -2,23 +2,27 @@
   "name": "foscam-client",
   "version": "0.1.0",
   "description": "Node client sdk for the current H.264 Foscam cameras like the FI9821W, FI9831P, etc.P",
+  "homepage": "https://github.com/lightswitch05/foscam-client",
+  "author": "Daniel White <daniel@developerdan.com> (http://www.developerdan.com)",
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs": "./node_modules/.bin/jsdoc --configure .jsdoc.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:lightswitch05/foscam-client.git"
-  },
   "keywords": [
     "foscam",
     "FI9831P",
     "FI9821W"
   ],
-  "author": "Daniel White <daniel@developerdan.com> (http://www.developerdan.com)",
+  "scripts": {
+    "test": "gulp",
+    "docs": "./node_modules/.bin/jsdoc --configure .jsdoc.json",
+    "prepublish": "gulp prepublish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lightswitch05/foscam-client.git"
+  },
   "license": "MIT",
-  "homepage": "https://github.com/lightswitch05/foscam-client",
   "dependencies": {
     "q": "^1.4.1",
     "request-promise": "^1.0.1",
@@ -27,6 +31,13 @@
   "devDependencies": {
     "jsdoc": "^3.3.3",
     "minami": "^1.1.1",
-    "uglify-js": "^2.5.0"
+    "gulp": "^3.6.0",
+    "gulp-eslint": "^1.1.0-rc-3",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^2.1.0",
+    "gulp-coveralls": "^0.1.0"
   }
 }
