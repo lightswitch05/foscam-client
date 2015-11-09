@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AV.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Foscam.html">Foscam</a><ul class='methods'><li data-type='method'><a href="Foscam.html#addAccount">addAccount</a></li><li data-type='method'><a href="Foscam.html#addMultiDev">addMultiDev</a></li><li data-type='method'><a href="Foscam.html#changePassword">changePassword</a></li><li data-type='method'><a href="Foscam.html#changeUserName">changeUserName</a></li><li data-type='method'><a href="Foscam.html#changeUserNameAndPwdTogether">changeUserNameAndPwdTogether</a></li><li data-type='method'><a href="Foscam.html#clearIOAlarmOutput">clearIOAlarmOutput</a></li><li data-type='method'><a href="Foscam.html#closeInfraLed">closeInfraLed</a></li><li data-type='method'><a href="Foscam.html#delAccount">delAccount</a></li><li data-type='method'><a href="Foscam.html#delMultiDev">delMultiDev</a></li><li data-type='method'><a href="Foscam.html#exportConfig">exportConfig</a></li><li data-type='method'><a href="Foscam.html#flipVideo">flipVideo</a></li><li data-type='method'><a href="Foscam.html#fwUpgrade">fwUpgrade</a></li><li data-type='method'><a href="Foscam.html#get485Info">get485Info</a></li><li data-type='method'><a href="Foscam.html#getAlarmRecordConfig">getAlarmRecordConfig</a></li><li data-type='method'><a href="Foscam.html#getCruiseCtrlMode">getCruiseCtrlMode</a></li><li data-type='method'><a href="Foscam.html#getCruiseLoopCnt">getCruiseLoopCnt</a></li><li data-type='method'><a href="Foscam.html#getCruisePrePointLingerTime">getCruisePrePointLingerTime</a></li><li data-type='method'><a href="Foscam.html#getCruiseTime">getCruiseTime</a></li><li data-type='method'><a href="Foscam.html#getCruiseTimeCustomed">getCruiseTimeCustomed</a></li><li data-type='method'><a href="Foscam.html#getDDNSConfig">getDDNSConfig</a></li><li data-type='method'><a href="Foscam.html#getDevInfo">getDevInfo</a></li><li data-type='method'><a href="Foscam.html#getDevName">getDevName</a></li><li data-type='method'><a href="Foscam.html#getDevState">getDevState</a></li><li data-type='method'><a href="Foscam.html#getFirewallConfig">getFirewallConfig</a></li><li data-type='method'><a href="Foscam.html#getFtpConfig">getFtpConfig</a></li><li data-type='method'><a href="Foscam.html#getGeneratePubKey">getGeneratePubKey</a></li><li data-type='method'><a href="Foscam.html#getH264FrameReferenceMode">getH264FrameReferenceMode</a></li><li data-type='method'><a href="Foscam.html#getImageSetting">getImageSetting</a></li><li data-type='method'><a href="Foscam.html#getInfraLedConfig">getInfraLedConfig</a></li><li data-type='method'><a href="Foscam.html#getIOAlarmConfig">getIOAlarmConfig</a></li><li data-type='method'><a href="Foscam.html#getIPInfo">getIPInfo</a></li><li data-type='method'><a href="Foscam.html#getLocalAlarmRecordConfig">getLocalAlarmRecordConfig</a></li><li data-type='method'><a href="Foscam.html#getLog">getLog</a></li><li data-type='method'><a href="Foscam.html#getMainVideoStreamType">getMainVideoStreamType</a></li><li data-type='method'><a href="Foscam.html#getMirrorAndFlipSetting">getMirrorAndFlipSetting</a></li><li data-type='method'><a href="Foscam.html#getMJStream">getMJStream</a></li><li data-type='method'><a href="Foscam.html#getMotionDetectConfig">getMotionDetectConfig</a></li><li data-type='method'><a href="Foscam.html#getMultiDevDetailInfo">getMultiDevDetailInfo</a></li><li data-type='method'><a href="Foscam.html#getMultiDevList">getMultiDevList</a></li><li data-type='method'><a href="Foscam.html#getOSDMask">getOSDMask</a></li><li data-type='method'><a href="Foscam.html#getOSDMaskArea">getOSDMaskArea</a></li><li data-type='method'><a href="Foscam.html#getOSDSetting">getOSDSetting</a></li><li data-type='method'><a href="Foscam.html#getP2PEnable">getP2PEnable</a></li><li data-type='method'><a href="Foscam.html#getP2PInfo">getP2PInfo</a></li><li data-type='method'><a href="Foscam.html#getP2PPort">getP2PPort</a></li><li data-type='method'><a href="Foscam.html#getPCAudioAlarmCfg">getPCAudioAlarmCfg</a></li><li data-type='method'><a href="Foscam.html#getPortInfo">getPortInfo</a></li><li data-type='method'><a href="Foscam.html#getPPPoEConfig">getPPPoEConfig</a></li><li data-type='method'><a href="Foscam.html#getProductAllInfo">getProductAllInfo</a></li><li data-type='method'><a href="Foscam.html#getProductAppVer">getProductAppVer</a></li><li data-type='method'><a href="Foscam.html#getProductAudioFlag">getProductAudioFlag</a></li><li data-type='method'><a href="Foscam.html#getProductIoAlarmFlag">getProductIoAlarmFlag</a></li><li data-type='method'><a href="Foscam.html#getProductLanguage">getProductLanguage</a></li><li data-type='method'><a href="Foscam.html#getProductModel">getProductModel</a></li><li data-type='method'><a href="Foscam.html#getProductModelName">getProductModelName</a></li><li data-type='method'><a href="Foscam.html#getProductOnvifFlag">getProductOnvifFlag</a></li><li data-type='method'><a href="Foscam.html#getProductOutdoorFlag">getProductOutdoorFlag</a></li><li data-type='method'><a href="Foscam.html#getProductP2pFlag">getProductP2pFlag</a></li><li data-type='method'><a href="Foscam.html#getProductPtFlag">getProductPtFlag</a></li><li data-type='method'><a href="Foscam.html#getProductRs485Flag">getProductRs485Flag</a></li><li data-type='method'><a href="Foscam.html#getProductSdFlag">getProductSdFlag</a></li><li data-type='method'><a href="Foscam.html#getProductSensorType">getProductSensorType</a></li><li data-type='method'><a href="Foscam.html#getProductTalkFlag">getProductTalkFlag</a></li><li data-type='method'><a href="Foscam.html#getProductWifiType">getProductWifiType</a></li><li data-type='method'><a href="Foscam.html#getProductWpsFlag">getProductWpsFlag</a></li><li data-type='method'><a href="Foscam.html#getProductZoomFlag">getProductZoomFlag</a></li><li data-type='method'><a href="Foscam.html#getPTZPrePointForSelfTest">getPTZPrePointForSelfTest</a></li><li data-type='method'><a href="Foscam.html#getPTZPresetPointList">getPTZPresetPointList</a></li><li data-type='method'><a href="Foscam.html#getPTZSelfTestMode">getPTZSelfTestMode</a></li><li data-type='method'><a href="Foscam.html#getPTZSpeed">getPTZSpeed</a></li><li data-type='method'><a href="Foscam.html#getRatio">getRatio</a></li><li data-type='method'><a href="Foscam.html#getRecordList">getRecordList</a></li><li data-type='method'><a href="Foscam.html#getRecordList2">getRecordList2</a></li><li data-type='method'><a href="Foscam.html#getRecordList2">getRecordList2</a></li><li data-type='method'><a href="Foscam.html#getRecordPath">getRecordPath</a></li><li data-type='method'><a href="Foscam.html#getScheduleInfraLedConfig">getScheduleInfraLedConfig</a></li><li data-type='method'><a href="Foscam.html#getScheduleRecordConfig">getScheduleRecordConfig</a></li><li data-type='method'><a href="Foscam.html#getScheduleRecordStreamChannel">getScheduleRecordStreamChannel</a></li><li data-type='method'><a href="Foscam.html#getScheduleSnapConfig">getScheduleSnapConfig</a></li><li data-type='method'><a href="Foscam.html#getSessionList">getSessionList</a></li><li data-type='method'><a href="Foscam.html#getSMTPConfig">getSMTPConfig</a></li><li data-type='method'><a href="Foscam.html#getSnapConfig">getSnapConfig</a></li><li data-type='method'><a href="Foscam.html#getSubVideoStreamParam">getSubVideoStreamParam</a></li><li data-type='method'><a href="Foscam.html#getSubVideoStreamType">getSubVideoStreamType</a></li><li data-type='method'><a href="Foscam.html#getSystemTime">getSystemTime</a></li><li data-type='method'><a href="Foscam.html#getUPnPConfig">getUPnPConfig</a></li><li data-type='method'><a href="Foscam.html#getUserList">getUserList</a></li><li data-type='method'><a href="Foscam.html#getVideoStreamParam">getVideoStreamParam</a></li><li data-type='method'><a href="Foscam.html#getWifiConfig">getWifiConfig</a></li><li data-type='method'><a href="Foscam.html#getWifiList">getWifiList</a></li><li data-type='method'><a href="Foscam.html#getZoomSpeed">getZoomSpeed</a></li><li data-type='method'><a href="Foscam.html#importConfig">importConfig</a></li><li data-type='method'><a href="Foscam.html#logIn">logIn</a></li><li data-type='method'><a href="Foscam.html#logOut">logOut</a></li><li data-type='method'><a href="Foscam.html#mirrorVideo">mirrorVideo</a></li><li data-type='method'><a href="Foscam.html#openInfraLed">openInfraLed</a></li><li data-type='method'><a href="Foscam.html#ptzAddPresetPoint">ptzAddPresetPoint</a></li><li data-type='method'><a href="Foscam.html#ptzDelCruiseMap">ptzDelCruiseMap</a></li><li data-type='method'><a href="Foscam.html#ptzDeletePresetPoint">ptzDeletePresetPoint</a></li><li data-type='method'><a href="Foscam.html#ptzGetCruiseMapInfo">ptzGetCruiseMapInfo</a></li><li data-type='method'><a href="Foscam.html#ptzGetCruiseMapList">ptzGetCruiseMapList</a></li><li data-type='method'><a href="Foscam.html#ptzGotoPresetPoint">ptzGotoPresetPoint</a></li><li data-type='method'><a href="Foscam.html#ptzMoveBottomLeft">ptzMoveBottomLeft</a></li><li data-type='method'><a href="Foscam.html#ptzMoveBottomRight">ptzMoveBottomRight</a></li><li data-type='method'><a href="Foscam.html#ptzMoveDown">ptzMoveDown</a></li><li data-type='method'><a href="Foscam.html#ptzMoveLeft">ptzMoveLeft</a></li><li data-type='method'><a href="Foscam.html#ptzMoveRight">ptzMoveRight</a></li><li data-type='method'><a href="Foscam.html#ptzMoveTopLeft">ptzMoveTopLeft</a></li><li data-type='method'><a href="Foscam.html#ptzMoveTopRight">ptzMoveTopRight</a></li><li data-type='method'><a href="Foscam.html#ptzMoveUp">ptzMoveUp</a></li><li data-type='method'><a href="Foscam.html#ptzReset">ptzReset</a></li><li data-type='method'><a href="Foscam.html#ptzSetCruiseMap">ptzSetCruiseMap</a></li><li data-type='method'><a href="Foscam.html#ptzStartCruise">ptzStartCruise</a></li><li data-type='method'><a href="Foscam.html#ptzStopCruise">ptzStopCruise</a></li><li data-type='method'><a href="Foscam.html#ptzStopRun">ptzStopRun</a></li><li data-type='method'><a href="Foscam.html#rebootSystem">rebootSystem</a></li><li data-type='method'><a href="Foscam.html#refreshWifiList">refreshWifiList</a></li><li data-type='method'><a href="Foscam.html#reloadRecordindex">reloadRecordindex</a></li><li data-type='method'><a href="Foscam.html#resetImageSetting">resetImageSetting</a></li><li data-type='method'><a href="Foscam.html#restoreToFactorySetting">restoreToFactorySetting</a></li><li data-type='method'><a href="Foscam.html#setAlarmRecordConfig">setAlarmRecordConfig</a></li><li data-type='method'><a href="Foscam.html#setBrightness">setBrightness</a></li><li data-type='method'><a href="Foscam.html#setContrast">setContrast</a></li><li data-type='method'><a href="Foscam.html#setCruiseCtrlMode">setCruiseCtrlMode</a></li><li data-type='method'><a href="Foscam.html#setCruiseLoopCnt">setCruiseLoopCnt</a></li><li data-type='method'><a href="Foscam.html#setCruisePrePointLingerTime">setCruisePrePointLingerTime</a></li><li data-type='method'><a href="Foscam.html#setCruiseTime">setCruiseTime</a></li><li data-type='method'><a href="Foscam.html#setCruiseTimeCustomed">setCruiseTimeCustomed</a></li><li data-type='method'><a href="Foscam.html#setDDNSConfig">setDDNSConfig</a></li><li data-type='method'><a href="Foscam.html#setDevName">setDevName</a></li><li data-type='method'><a href="Foscam.html#setFirewallConfig">setFirewallConfig</a></li><li data-type='method'><a href="Foscam.html#setFtpConfig">setFtpConfig</a></li><li data-type='method'><a href="Foscam.html#setH264FrameReferenceMode">setH264FrameReferenceMode</a></li><li data-type='method'><a href="Foscam.html#setHue">setHue</a></li><li data-type='method'><a href="Foscam.html#setInfraLedConfig">setInfraLedConfig</a></li><li data-type='method'><a href="Foscam.html#setIpInfo">setIpInfo</a></li><li data-type='method'><a href="Foscam.html#setLocalAlarmRecordConfig">setLocalAlarmRecordConfig</a></li><li data-type='method'><a href="Foscam.html#setMainVideoStreamType">setMainVideoStreamType</a></li><li data-type='method'><a href="Foscam.html#setMotionDetectConfig">setMotionDetectConfig</a></li><li data-type='method'><a href="Foscam.html#setOSDMask">setOSDMask</a></li><li data-type='method'><a href="Foscam.html#setOSDMaskArea">setOSDMaskArea</a></li><li data-type='method'><a href="Foscam.html#setOSDSetting">setOSDSetting</a></li><li data-type='method'><a href="Foscam.html#setP2PEnable">setP2PEnable</a></li><li data-type='method'><a href="Foscam.html#setP2PPort">setP2PPort</a></li><li data-type='method'><a href="Foscam.html#setPCAudioAlarmCfg">setPCAudioAlarmCfg</a></li><li data-type='method'><a href="Foscam.html#setPortInfo">setPortInfo</a></li><li data-type='method'><a href="Foscam.html#setPowerFrequency">setPowerFrequency</a></li><li data-type='method'><a href="Foscam.html#setPPPoEConfig">setPPPoEConfig</a></li><li data-type='method'><a href="Foscam.html#setPTZPrePointForSelfTest">setPTZPrePointForSelfTest</a></li><li data-type='method'><a href="Foscam.html#setPTZPrePointForSelfTest">setPTZPrePointForSelfTest</a></li><li data-type='method'><a href="Foscam.html#setPTZSelfTestMode">setPTZSelfTestMode</a></li><li data-type='method'><a href="Foscam.html#setPTZSpeed">setPTZSpeed</a></li><li data-type='method'><a href="Foscam.html#setRatio">setRatio</a></li><li data-type='method'><a href="Foscam.html#setSaturation">setSaturation</a></li><li data-type='method'><a href="Foscam.html#setScheduleInfraLedConfig">setScheduleInfraLedConfig</a></li><li data-type='method'><a href="Foscam.html#setScheduleRecordConfig">setScheduleRecordConfig</a></li><li data-type='method'><a href="Foscam.html#setScheduleRecordConfig">setScheduleRecordConfig</a></li><li data-type='method'><a href="Foscam.html#setScheduleRecordStreamChannel">setScheduleRecordStreamChannel</a></li><li data-type='method'><a href="Foscam.html#setScheduleSnapConfig">setScheduleSnapConfig</a></li><li data-type='method'><a href="Foscam.html#setSharpness">setSharpness</a></li><li data-type='method'><a href="Foscam.html#setSMTPConfig">setSMTPConfig</a></li><li data-type='method'><a href="Foscam.html#setSnapConfig">setSnapConfig</a></li><li data-type='method'><a href="Foscam.html#setSubStreamFormat">setSubStreamFormat</a></li><li data-type='method'><a href="Foscam.html#setSubVideoStreamParam">setSubVideoStreamParam</a></li><li data-type='method'><a href="Foscam.html#setSystemTime">setSystemTime</a></li><li data-type='method'><a href="Foscam.html#setUPnPConfig">setUPnPConfig</a></li><li data-type='method'><a href="Foscam.html#setVideoStreamParam">setVideoStreamParam</a></li><li data-type='method'><a href="Foscam.html#setWifiSetting">setWifiSetting</a></li><li data-type='method'><a href="Foscam.html#setZoomSpeed">setZoomSpeed</a></li><li data-type='method'><a href="Foscam.html#smtpTest">smtpTest</a></li><li data-type='method'><a href="Foscam.html#snapPicture">snapPicture</a></li><li data-type='method'><a href="Foscam.html#snapPicture2">snapPicture2</a></li><li data-type='method'><a href="Foscam.html#testFtpServer">testFtpServer</a></li><li data-type='method'><a href="Foscam.html#toolResetToFactory">toolResetToFactory</a></li><li data-type='method'><a href="Foscam.html#usrBeatHeart">usrBeatHeart</a></li><li data-type='method'><a href="Foscam.html#zoomIn">zoomIn</a></li><li data-type='method'><a href="Foscam.html#zoomOut">zoomOut</a></li><li data-type='method'><a href="Foscam.html#zoomStop">zoomStop</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">AV.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var Foscam = require('./Foscam');
+
+/**
+ * getImageSetting
+ * @desc Get color attribute of video.
+ * @returns {Promise&lt;{brightness: int}>} A promise to the response.
+ */
+Foscam.prototype.getImageSetting = function() {
+    return this.get('getImageSetting');
+};
+
+/**
+ * setBrightness
+ * @param {int} level New level of brightness. Between 1-100.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setBrightness = function(level) {
+    return this.get('setBrightness', {
+        brightness: level
+    });
+};
+
+/**
+ * setContrast
+ * @param {int} level New level of contrast. Between 1-100.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setContrast = function(level) {
+    return this.get('setContrast', {
+        contrast: level
+    });
+};
+
+/**
+ * setHue
+ * @param {int} level New level of hue. Between 1-100.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setHue = function(level) {
+    return this.get('setHue', {
+        hue: level
+    });
+};
+
+/**
+ * setSaturation
+ * @param {int} level New level of saturation. Between 1-100.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setSaturation = function(level) {
+    return this.get('setSaturation', {
+        saturation: level
+    });
+};
+
+/**
+ * setSharpness
+ * @param {int} level New level of sharpness. Between 1-100.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setSharpness = function(level) {
+    return this.get('setSharpness', {
+        sharpness: level
+    });
+};
+
+/**
+ * resetImageSetting
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.resetImageSetting = function() {
+    return this.get('resetImageSetting');
+};
+
+/**
+ * getMirrorAndFlipSetting
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getMirrorAndFlipSetting = function() {
+    return this.get('getMirrorAndFlipSetting').then(
+        function(response) {
+            Foscam.numberToBoolean(response, 'isMirror');
+            Foscam.numberToBoolean(response, 'isFlip');
+
+            return response;
+        }
+    );
+};
+
+/**
+ * mirrorVideo
+ * @param {boolean} isMirror If mirror should be set or not.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.mirrorVideo = function(isMirror) {
+    return this.get('mirrorVideo', {
+        isMirror: Foscam.booleanToNumber(isMirror)
+    });
+};
+
+/**
+ * flipVideo
+ * @param {boolean} isFlip If flip should be set or not.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.flipVideo = function(isFlip) {
+    return this.get('flipVideo', {
+        isFlip: Foscam.booleanToNumber(isFlip)
+    });
+};
+
+/**
+ * getRatio
+ * @desc Get value for image distortion correction
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getRatio = function() {
+    return this.get('getRatio');
+};
+
+/**
+ * setRatio
+ * @desc Set value for image distortion correction
+ * @param {int} ratio 0-511. Three ranks, High:0-150. Middle:151-430. Low:431-511. Default, Middle.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setRatio = function(ratio) {
+    return this.get('setRatio', {ratio: ratio});
+};
+
+/**
+ * getH264FrameReferenceMode
+ * @desc Get frame shipping reference mode of H264 encode stream.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getH264FrameReferenceMode = function() {
+    return this.get('getH264FrmRefMode');
+};
+
+/**
+ * setH264FrameReferenceMode
+ * @desc Set frame shipping reference mode of H264 encode stream.
+ * @param {int} mode 1 or 0.
+ *      0 for 'Normal reference mode'.
+ *      1 for 'Two frames are separated by four skipping frames'.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setH264FrameReferenceMode = function(mode) {
+    return this.get('setH264FrmRefMode', {mode: mode});
+};
+
+/**
+ * getScheduleRecordStreamChannel
+ * @desc Get stream channel for schedule record.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getScheduleRecordStreamChannel = function() {
+    return this.get('getScheduleRecordStreamChn');
+};
+
+/**
+ * setScheduleRecordStreamChannel
+ * @desc Set stream channel for schedule record.
+ * @param {int} channel 1 or 0. 0 for 'Main Stream'. 1 for 'Sub Stream'.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setScheduleRecordStreamChannel = function(channel) {
+    return this.get('setScheduleRecordStreamChn', {cnl: channel});
+};
+
+/**
+ * setPowerFrequency
+ * @desc Set power freq of sensor.
+ * @param {int} frequency 1 or 0. 0 for '60HZ'. 1 for '50HZ'.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setPowerFrequency = function(frequency) {
+    return this.get('setPwrFreq', {feq: frequency});
+};
+
+/**
+ * getVideoStreamParam
+ * @desc Get video stream param.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getVideoStreamParam = function() {
+    return this.get('getVideoStreamParam');
+};
+
+/**
+ * setVideoStreamParam
+ * @desc Set the video stream param of stream N
+ * @param {object} params
+ * @param {int} params.streamType 0-3.
+ * @param {int} params.resolution Resolution of stream type N.
+ * @param {int} params.bitRate Bit rate of stream type N (20480~2097152).
+ * @param {int} params.frameRate Frame rate of stream type N.
+ * @param {int} params.GOP P frames between I frame of stream type N.
+        The suggest value is: X * frameRate
+ * @param {int} [params.isVBR] Not in use currently. Defaults to 0.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setVideoStreamParam = function(params) {
+    if (typeof params.isVBR === 'undefined') {
+        params.isVBR = 0;
+    }
+
+    return this.get('setVideoStreamParam', params);
+};
+
+/**
+ * getSubVideoStreamParam
+ * @desc Get sub video stream param.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getSubVideoStreamParam = function() {
+    return this.get('getVideoStreamParam');
+};
+
+/**
+ * setSubVideoStreamParam
+ * @desc Set the sub video stream param of stream N
+ * @param {object} params
+ * @param {int} params.streamType 0-3.
+ * @param {int} params.resolution Resolution of stream type N.
+ * @param {int} params.bitRate Bit rate of stream type N (20480~2097152).
+ * @param {int} params.frameRate Frame rate of stream type N.
+ * @param {int} params.GOP P frames between I frame of stream type N.
+ The suggest value is: X * frameRate
+ * @param {int} [params.isVBR] Not in use currently. Defaults to 0.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setSubVideoStreamParam = function(params) {
+    if (typeof params.isVBR === 'undefined') {
+        params.isVBR = 0;
+    }
+
+    return this.get('setSubVideoStreamParam', params);
+};
+
+/**
+ * getMainVideoStreamType
+ * @desc Get the stream type of main stream.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getMainVideoStreamType = function() {
+    return this.get('getMainVideoStreamType');
+};
+
+/**
+ * getSubVideoStreamType
+ * @desc Get the stream type of sub stream.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getSubVideoStreamType = function() {
+    return this.get('getSubVideoStreamType');
+};
+
+/**
+ * setMainVideoStreamType
+ * @desc Set the stream type of main stream.
+ * @param {int} streamType The stream type 0~3.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setMainVideoStreamType = function(streamType) {
+    return this.get('setMainVideoStreamType', {streamType: streamType});
+};
+
+/**
+ * setSubStreamFormat
+ * @desc Set the stream format of sub stream.
+ *      Our device can only support 2 streams:Main stream for PC access and Sub
+ *      stream for mobile access, but someone need a MJ stream to embed their
+ *      camera into a webpage, in this case, we should set sub stream format to Motion
+ *      Jpeg, and then you can get MJ stream by command:
+ *      /cgi-bin/CGIStream.cgi?cmd=GetMJStream, but when you login as a sub stream
+ *      user, the stream data will be same as main stream.
+ * @param {int} format 0: H264. 1: MotionJpeg
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setSubStreamFormat = function(format) {
+    return this.get('setMainVideoStreamType', {format: format});
+};
+
+/**
+ * getMJStream
+ * @desc Get motion jpeg stream.
+ *      &lt;ol>
+ *      &lt;li>Motion jpeg stream data is returned from http server by a serverpush mode&lt;/li>
+ *      &lt;li>MJ stream is VGA resolution @ 15fps&lt;/li>
+ *      &lt;li>For some version of Firefox browse, the Firefox will crash when use
+ *      “GetMJStream” CGI to get mjstream long time. This problem is due to the
+ *      browse has some defects, it can not parse data correctly and directly. In
+ *      order to fix this problem, we should as follows:
+ *      &lt;ul>
+ *          &lt;li>Create a .html empty document, such as “MJ.html”.&lt;/li>
+ *          &lt;li>Input the content into you .txt document, as follows:
+ *      &lt;pre>&lt;code>
+ *          &amp;lt;html&amp;gt;&amp;lt;body&amp;gt;
+ *              &amp;lt;img src=&amp;quot;http://example.com:99/cgi-bin/CGIStream.cgi?cmd=GetMJStream&amp;amp;usr=admin&amp;amp;pwd=&amp;quot; /&amp;gt;
+ *          &amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;
+ *      &lt;/code>&lt;/pre>&lt;/li>
+ *      &lt;/ul>&lt;/li>&lt;/ol>
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getMJStream = function() {
+    return this.get('GetMJStream');
+};
+
+/**
+ * getOSDSetting
+ * @desc Get OSD config.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getOSDSetting = function() {
+    return this.get('getOSDSetting').then(
+        function(response) {
+            Foscam.numberToBoolean(response, 'isEnableTimeStamp');
+            Foscam.numberToBoolean(response, 'isEnableDevName');
+            Foscam.numberToBoolean(response, 'isEnableOSDMask');
+            return response;
+        }
+    );
+};
+
+/**
+ * setOSDSetting
+ * @desc Set OSD config.
+ * @param {object} params
+ * @param {int} params.isEnableTimeStamp Time stamp will display on screen or not
+ * @param {int} params.isEnableDevName Camera name will display on screen or not
+ * @param {int} params.dispPosition OSD display position, currently can only be 0
+ * @param {int} params.isEnableOSDMask Is OSD mask effective
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setOSDSetting = function(params) {
+    return this.get('setOSDSetting', params);
+};
+
+/**
+ * getOSDMaskArea
+ * @desc Get OSD mask area info. Our device can only support 4 mask areas.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getOSDMaskArea = function() {
+    return this.get('getOsdMaskArea');
+};
+
+/**
+ * setOSDMaskArea
+ * @desc Set OSD mask area info. Our device can only support 4 mask areas.
+ * @param {Object} params
+ *      x1_N: The top left X position of mask N
+ *      y1_N: The top left Y position of mask N
+ *      x2_N: The bottom right X position of mask N
+ *      y2_N: The bottom right Y position of mask N
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setOSDMaskArea = function(params) {
+    return this.get('setOsdMaskArea', params);
+};
+
+/**
+ * getOSDMask
+ * @desc Get OSD mask status.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getOSDMask = function() {
+    return this.get('getOSDMask');
+};
+
+/**
+ * setOSDMask
+ * @desc Set OSD mask status.
+ * @param isEnabledOSDMask 0: Disable, 1: Enable
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setOSDMask = function(isEnabledOSDMask) {
+    return this.get('setOSDMask', {isEnabledOSDMask: isEnabledOSDMask});
+};
+
+/**
+ * getMotionDetectConfig
+ * @desc Get motion detect config.
+ *      - Video region is divided into 10*10 sub areasideo region is divided into 10*10 sub areas
+ *      - The min unit of schedule is half an hour, scheduleN value range 2N -1(N[0-48])
+ *      - areaN value 2N -1(N[0-10])
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getMotionDetectConfig = function() {
+    return this.get('getMotionDetectConfig');
+};
+
+/**
+ * setMotionDetectConfig
+ * @desc Set motion detect config
+ *      - Video region is divided into 10*10 sub areasideo region is divided into 10*10 sub areas
+ *      - The min unit of schedule is half an hour, scheduleN value range 2N -1(N[0-48])
+ *      - areaN value 2N -1(N[0-10])
+ * @param {object} params
+ * @param {int} params.isEnable Is enable motion detect alarm. 0 or 1.
+ * @param {string} params.linkage Motion alarm linkage ( bit3 | bit2 | bit1 | bit0 ).
+ *      - bit0: Ring
+ *      - bit1: Send mail
+ *      - bit2: Snap picture
+ *      - bit3: Record
+ * @param {int} params.snapInterval The interval time to snap picture again
+ * @param {int} params.sensitivity Motion detect sensitivity.
+ *      - 0: Low
+ *      - 1: Normal
+ *      - 2: High
+ *      - 3: Lower
+ *      - 4: Lowest
+ * @param {int} params.triggerInterval The time of which motion detect alarm can trigger again
+ *      when a motion detection has happened.
+ * @param {Object} params.schedules The motion alaram schedule of one week, N = 0(Monday) ~6(Sunday)
+ * @param {Object} params.areas The area info of row N
+ * @example /cgi-bin/CGIProxy.fcgi?cmd=setMotionDetectConfig&amp;isEnable=1&amp;linkage=16&amp;
+ *      snapInterval=2&amp;sensitivity=1&amp;triggerInterval=5&amp;schedule0=1023&amp;schedule1=
+ *      1023&amp;schedule2=1023&amp;schedule3=1023&amp;schedule4=1023&amp;schedule5=1023&amp;
+ *      schedule6=1023&amp;area0=1023&amp;area1=1023&amp;area2=1023&amp;area3=1023&amp;area4=
+ *      1023&amp;area5=1023&amp;area6=1023&amp;area7=1023&amp;area7=1023&amp;area8=1023&amp;area9=1023
+ * @returns {Promise&lt;object>} A promise to the response.
+ * @todo Document format for schedules and areas
+ */
+Foscam.prototype.setMotionDetectConfig = function(params) {
+    for (var property in params.schedules) {
+        if (params.schedules.hasOwnProperty(property)) {
+            params[property] = params.schedules[property];
+        }
+    }
+
+    for (property in params.areas) {
+        if (params.areas.hasOwnProperty(property)) {
+            params[property] = params.areas[property];
+        }
+    }
+
+    return this.get('setMotionDetectConfig', params);
+};
+
+/**
+ * setLocalAlarmRecordConfig
+ * @desc Set local alarm-record config
+ * @param {object} params
+ * @param {int} params.isEnableLocalAlarmRecord 0: Disable. 1: Enable.
+ * @param {int} params.localAlarmRecordSecs Recording time.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setLocalAlarmRecordConfig = function(params) {
+    return this.get('setLocalAlarmRecordConfig', params);
+};
+
+/**
+ * getLocalAlarmRecordConfig
+ * @desc Get local alarm-record config
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getLocalAlarmRecordConfig = function() {
+    return this.get('getLocalAlarmRecordConfig');
+};
+
+/**
+ * getSnapConfig
+ * @desc Get snap config.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getSnapConfig = function() {
+    return this.get('getSnapConfig');
+};
+
+/**
+ * setSnapConfig
+ * @desc Set snap config.
+ * @param {object} params
+ * @param {int} params.snapPicQuality 0: Low Quality. 1: Normal Quality. 2: High quality.
+ * @param {int} params.saveLocation 0: Save to sd card. 1: Not in use now. 2: Upload to FTP.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setSnapConfig = function(params) {
+    return this.get('setSnapConfig', params);
+};
+
+/**
+ * getScheduleSnapConfig
+ * @desc Get schedule snap config. The min unit of schedule is half an hour, scheduleN value range 2N -1(N[0-48])
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getScheduleSnapConfig = function() {
+    return this.get('getScheduleSnapConfig');
+};
+
+/**
+ * setScheduleSnapConfig
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Set schedule snap config
+ */
+Foscam.prototype.setScheduleSnapConfig = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
+
+/**
+ * snapPicture
+ * @desc Manual snap picture. Picture resolution is the same as main stream resolutionnapPicture.
+ * @returns {Promise&lt;Object>} A promise to the response. We will return a html script directly.
+ */
+Foscam.prototype.snapPicture = function() {
+    return rp.get(this.url, {qs: {cmd: 'snapPicture'}});
+};
+
+/**
+ * snapPicture
+ * @desc Manual snap picture. This command will return jpeg image data directly.
+ * @returns {Promise&lt;Object>} A promise to the response. jpeg image data directly.
+ */
+Foscam.prototype.snapPicture2 = function() {
+    return rp.get(this.url, {qs: {cmd: 'snapPicture2'}});
+};
+
+/**
+ * getRecordList
+ * @desc Get record list.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getRecordList = function() {
+    return this.get('getRecordList');
+};
+
+/**
+ * getRecordList2
+ * @desc Get record list.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getRecordList2 = function() {
+    return this.get('getRecordList2');
+};
+
+/**
+ * getAlarmRecordConfig
+ * @desc Get alarm record config.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getRecordList2 = function() {
+    return this.get('getAlarmRecordConfig');
+};
+
+/**
+ * reloadRecordindex
+ * @desc Synchronization of record index for Play.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.reloadRecordindex = function() {
+    return this.get('reloadRecordindex');
+};
+
+/**
+ * getAlarmRecordConfig
+ * @desc Get alarm record config.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getAlarmRecordConfig = function() {
+    return this.get('getAlarmRecordConfig');
+};
+
+/**
+ * setAlarmRecordConfig
+ * @desc Set alarm record config
+ * @param {object} params
+ * @param {int} params.isEnablePreRecord Preview record state
+ * @param {int} params.preRecordSecs Preview record time
+ * @param {int} params.alarmRecordSecs Alarm record time
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setAlarmRecordConfig = function(params) {
+    return this.get('setAlarmRecordConfig', params);
+};
+
+/**
+ * getRecordPath
+ * @desc Get record path for storage.
+ * @returns {Promise&lt;object>} A promise to the response.
+ *      path: 0-SD card, 2-FTP server
+ *      free: The free capacity of storage device
+ *      total: The total capacity of storage device
+ */
+Foscam.prototype.getRecordPath = function() {
+    return this.get('getRecordPath');
+};
+
+/**
+ * getScheduleRecordConfig
+ * @desc Get config for schedule recording.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getScheduleRecordConfig = function() {
+    return this.get('getScheduleRecordConfig');
+};
+
+/**
+ * setScheduleRecordConfig
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Set schedule recordconfig
+ */
+Foscam.prototype.setScheduleRecordConfig = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
+
+/**
+ * setIOAlarmConfig
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Set IO alarm config
+ */
+Foscam.prototype.setScheduleRecordConfig = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
+
+/**
+ * getIOAlarmConfig
+ * @desc Get IO alarm config.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getIOAlarmConfig = function() {
+    return this.get('getIOAlarmConfig');
+};
+
+/**
+ * clearIOAlarmOutput
+ * @desc Clean IO alarm output.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.clearIOAlarmOutput = function() {
+    return this.get('clearIOAlarmOutput');
+};
+
+/**
+ * setPCAudioAlarmCfg
+ * @desc Set audio alarm config for PC（web live video.
+ * @param {int} isEnablePCAudioAlarm Enable state
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setPCAudioAlarmCfg = function(isEnablePCAudioAlarm) {
+    return this.get('setPCAudioAlarmCfg', {isEnablePCAudioAlarm: isEnablePCAudioAlarm});
+};
+
+/**
+ * getPCAudioAlarmCfg
+ * @desc Get audio alarm config for PC（web live video）.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getPCAudioAlarmCfg = function() {
+    return this.get('getPCAudioAlarmCfg');
+};
+
+/**
+ * getMultiDevList
+ * @desc Get multi device list.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getMultiDevList = function() {
+    return this.get('getMultiDevList');
+};
+
+/**
+ * getMultiDevDetailInfo
+ * @desc Get multi device information.
+ * @param {int} channel Channel no
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getMultiDevDetailInfo = function(channel) {
+    return this.get('getMultiDevDetailInfo', {cnnl: channel});
+};
+
+/**
+ * addMultiDev
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Add multiy device
+ */
+Foscam.prototype.addMultiDev = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
+
+/**
+ * delMultiDev
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Delete multiy device
+ */
+Foscam.prototype.delMultiDev = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.3</a> on Sun Nov 08 2015 21:52:00 GMT-0500 (Eastern Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>User.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,60 +28,127 @@
 
 <div id="main">
     
+    <h1 class="page-title">User.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var Foscam = require('./Foscam');
 
+/**
+ * addAccount
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Add user account
+ */
+Foscam.prototype.addAccount = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
 
+/**
+ * delAccount
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Delete user account
+ */
+Foscam.prototype.delAccount = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
 
+/**
+ * changePassword
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Change password
+ */
+Foscam.prototype.changePassword = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
 
+/**
+ * changeUserName
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Change user name
+ */
+Foscam.prototype.changeUserName = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
 
+/**
+ * changeUserNameAndPwdTogether
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Change user name and password together
+ */
+Foscam.prototype.changeUserNameAndPwdTogether = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
 
+/**
+ * logIn
+ * @desc User log in to camera.
+ * @param {object} params
+ * @param {string} [params.username] Username to login. Defaults to username supplied at api initialization.
+ * @param {string} [params.password] Password of user to login. Defaults to password supplied at api initialization.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.logIn = function(params) {
+    params.username = params.username || this.username;
+    params.password = params.password || this.password;
 
+    return this.get('logIn', params);
+};
 
+/**
+ * logOut
+ * @desc User log out to camera.
+ * @param {string} [username] Username to login. Defaults to username supplied at api initialization.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.logOut = function(username) {
+    var params = {
+        userName: username || this.username
+    };
 
-    
+    return this.get('logOut', params);
+};
 
+/**
+ * getSessionList
+ * @desc Get current session list of the camera.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getSessionList = function() {
+    return this.get('getSessionList');
+};
 
-    <section class="readme">
-        <article><h1>Node Foscam Client</h1><p><a href="https://badge.fury.io/js/foscam-client"><img src="https://badge.fury.io/js/foscam-client.svg" alt="npm version"></a>
-<a href="https://gitter.im/lightswitch05/foscam-client?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter"></a>
-<a href="https://gemnasium.com/lightswitch05/foscam-client"><img src="https://gemnasium.com/lightswitch05/foscam-client.svg" alt="Dependency Status"></a></p>
-<p>Node client sdk for current HD foscam cameras that stream H.264 like the FI9821W, FI9831P, etc..</p>
-<p>This is an early release and is not a fully functional SDK. Please open tickets and submit pull request as bugs are found. Until a 1.0.0 release, all 0.x.0 releases are considered major and may contain breaking changes, see <a href="//github.com/lightswitch05/foscam-client/blob/master/CHANGELOG.md">CHANGELOG.md</a> for release details.</p>
-<h2>Example Usage</h2><p>Install using npm: <code>npm install foscam-client</code></p>
-<pre class="prettyprint source lang-JavaScript"><code>var Foscam = require('foscam-client');
+/**
+ * getUserList
+ * @desc Get user account list of the camera.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getUserList = function() {
+    return this.get('getUserList');
+};
 
-var camera = new Foscam('my-username', 'bad-password1', '192.168.0.50');
-
-// Get saved presets on the camera
-var getPointList = camera.getPTZPresetPointList();
-
-// Once the presets are received - print the list to the console and move to the 3rd saved preset
-var gotoPresetPoint = getPointList.then(function(pointList) {
-    console.log('PTZ Point List:' + JSON.stringify(pointList));
-
-    // Note that ptzGotoPresetPoint's promise is fulfilled as soon as the command is received by the
-    // camera. There is no way to block until the camera has finished moving to the location.
-    return camera.ptzGotoPresetPoint(pointList.point3)
-});
-
-// Once the ptzGotoPresetPoint command is finished - snap a picture
-var snapPicture = gotoPresetPoint.then(function(){
-    return camera.snapPicture2()
-});
-
-// Once the picture is snapped - do something with it
-snapPicture.then(function(binaryJpg){
-    // do something with the binary jpg
-});</code></pre><h2>Docs</h2><p>Docs: http://lightswitch05.github.io/foscam-client</p>
-<p>Generate Docs: <code>npm run docs</code></p></article>
+/**
+ * usrBeatHeart
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc user checks connection with camera
+ */
+Foscam.prototype.usrBeatHeart = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>Device.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -28,60 +28,313 @@
 
 <div id="main">
     
+    <h1 class="page-title">Device.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var Foscam = require('./Foscam');
 
+/**
+ * setSystemTime
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Set system time
+ */
+Foscam.prototype.setSystemTime = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
 
+/**
+ * getSystemTime
+ * @desc Get system time.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getSystemTime = function() {
+    return this.get('getSystemTime');
+};
 
+/**
+ * openInfraLed
+ * @desc Force open infra led.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.openInfraLed = function() {
+    return this.get('openInfraLed');
+};
 
+/**
+ * closeInfraLed
+ * @desc Force close infra led.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.closeInfraLed = function() {
+    return this.get('closeInfraLed');
+};
 
+/**
+ * getInfraLedConfig
+ * @desc Get infra led config.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getInfraLedConfig = function() {
+    return this.get('getInfraLedConfig');
+};
 
+/**
+ * setInfraLedConfig
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Set infra led config
+ */
+Foscam.prototype.setInfraLedConfig = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
 
+/**
+ * getScheduleInfraLedConfig
+ * @desc Get config for infra led switch schedule.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getScheduleInfraLedConfig = function() {
+    return this.get('getScheduleInfraLedConfig');
+};
 
+/**
+ * setScheduleInfraLedConfig
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Set config for infra led switch schedule
+ */
+Foscam.prototype.setScheduleInfraLedConfig = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
 
-    
+/**
+ * getDevState
+ * @desc Get all device state.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getDevState = function() {
+    return this.get('getDevState');
+};
 
+/**
+ * getDevName
+ * @desc Get camera name.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getDevName = function() {
+    return this.get('getDevName');
+};
 
-    <section class="readme">
-        <article><h1>Node Foscam Client</h1><p><a href="https://badge.fury.io/js/foscam-client"><img src="https://badge.fury.io/js/foscam-client.svg" alt="npm version"></a>
-<a href="https://gitter.im/lightswitch05/foscam-client?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter"></a>
-<a href="https://gemnasium.com/lightswitch05/foscam-client"><img src="https://gemnasium.com/lightswitch05/foscam-client.svg" alt="Dependency Status"></a></p>
-<p>Node client sdk for current HD foscam cameras that stream H.264 like the FI9821W, FI9831P, etc..</p>
-<p>This is an early release and is not a fully functional SDK. Please open tickets and submit pull request as bugs are found. Until a 1.0.0 release, all 0.x.0 releases are considered major and may contain breaking changes, see <a href="//github.com/lightswitch05/foscam-client/blob/master/CHANGELOG.md">CHANGELOG.md</a> for release details.</p>
-<h2>Example Usage</h2><p>Install using npm: <code>npm install foscam-client</code></p>
-<pre class="prettyprint source lang-JavaScript"><code>var Foscam = require('foscam-client');
+/**
+ * setDevName
+ * @desc Set camera name.
+ * @param {string} name Camera name.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.setDevName = function(name) {
+    return this.get('setDevName', {devName: name});
+};
 
-var camera = new Foscam('my-username', 'bad-password1', '192.168.0.50');
+/**
+ * getDevInfo
+ * @desc Get camera information.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getDevInfo = function() {
+    return this.get('getDevInfo');
+};
 
-// Get saved presets on the camera
-var getPointList = camera.getPTZPresetPointList();
+/**
+ * getProductModel
+ * @desc Get camera model number.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductModel = function() {
+    return this.get('getProductModel');
+};
 
-// Once the presets are received - print the list to the console and move to the 3rd saved preset
-var gotoPresetPoint = getPointList.then(function(pointList) {
-    console.log('PTZ Point List:' + JSON.stringify(pointList));
+/**
+ * getProductModelName
+ * @desc Get camera model name.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductModelName = function() {
+    return this.get('getProductModelName');
+};
 
-    // Note that ptzGotoPresetPoint's promise is fulfilled as soon as the command is received by the
-    // camera. There is no way to block until the camera has finished moving to the location.
-    return camera.ptzGotoPresetPoint(pointList.point3)
-});
+/**
+ * getProductLanguage
+ * @desc Get camera main language.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductLanguage = function() {
+    return this.get('getProductLanguage');
+};
 
-// Once the ptzGotoPresetPoint command is finished - snap a picture
-var snapPicture = gotoPresetPoint.then(function(){
-    return camera.snapPicture2()
-});
+/**
+ * getProductSensorType
+ * @desc Get camera sensor type number.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductSensorType = function() {
+    return this.get('getProductSensorType');
+};
 
-// Once the picture is snapped - do something with it
-snapPicture.then(function(binaryJpg){
-    // do something with the binary jpg
-});</code></pre><h2>Docs</h2><p>Docs: http://lightswitch05.github.io/foscam-client</p>
-<p>Generate Docs: <code>npm run docs</code></p></article>
+/**
+ * getProductWifiType
+ * @desc Get camera wifi type number.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductWifiType = function() {
+    return this.get('getProductWifiType');
+};
+
+/**
+ * getProductSdFlag
+ * @desc Whether camera support sd card.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductSdFlag = function() {
+    return this.get('getProductSdFlag');
+};
+
+/**
+ * getProductOutdoorFlag
+ * @desc Whether camera is outdoor machine.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductOutdoorFlag = function() {
+    return this.get('getProductOutdoorFlag');
+};
+
+/**
+ * getProductPtFlag
+ * @desc Whether camera is pt machine.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductPtFlag = function() {
+    return this.get('getProductPtFlag');
+};
+
+/**
+ * getProductZoomFlag
+ * @desc Whether camera is zoom machine.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductZoomFlag = function() {
+    return this.get('getProductZoomFlag');
+};
+
+/**
+ * getProductRs485Flag
+ * @desc Whether camera support rs485.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductRs485Flag = function() {
+    return this.get('getProductRs485Flag');
+};
+
+/**
+ * getProductIoAlarmFlag
+ * @desc Whether camera support IO alarm.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductIoAlarmFlag = function() {
+    return this.get('getProductIoAlarmFlag');
+};
+
+/**
+ * getProductOnvifFlag
+ * @desc Whether camera support Onvif.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductOnvifFlag = function() {
+    return this.get('getProductOnvifFlag');
+};
+
+/**
+ * getProductP2pFlag
+ * @desc Whether camera support P2p.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductP2pFlag = function() {
+    return this.get('getProductP2pFlag');
+};
+
+/**
+ * getProductWpsFlag
+ * @desc Whether camera support Wps.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductWpsFlag = function() {
+    return this.get('getProductWpsFlag');
+};
+
+/**
+ * getProductAudioFlag
+ * @desc Whether camera support audio-speak.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductAudioFlag = function() {
+    return this.get('getProductAudioFlag');
+};
+
+/**
+ * getProductTalkFlag
+ * @desc Whether camera support audio-talk.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductTalkFlag = function() {
+    return this.get('getProductTalkFlag');
+};
+
+/**
+ * getProductAppVer
+ * @desc Get camera application version.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductAppVer = function() {
+    return this.get('getProductAppVer');
+};
+
+/**
+ * getProductAllInfo
+ * @desc Get camera Information.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getProductAllInfo = function() {
+    return this.get('getProductAllInfo');
+};
+
+/**
+ * getGeneratePubKey
+ * @desc Get public key generated by camera for software reset.
+ * @returns {Promise&lt;object>} A promise to the response.
+ */
+Foscam.prototype.getGeneratePubKey = function() {
+    return this.get('getGeneratePubKey');
+};
+
+/**
+ * toolResetToFactory
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ * @desc Set camera reset to factory by software
+ */
+Foscam.prototype.toolResetToFactory = function() {
+    throw {name : "NotImplementedError", message : "This function hasn't been implemented yet."};
+};
+</code></pre>
+        </article>
     </section>
-
-
 
 
 
