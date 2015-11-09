@@ -51,3 +51,13 @@ Docs
 Docs: http://lightswitch05.github.io/foscam-client
 
 Generate Docs: `npm run docs`
+
+Development
+-----------
+
+* Install dependencies
+    * `npm install`
+    * `npm install --global gulp`
+* Run lint and tests
+    * `gulp`
+
