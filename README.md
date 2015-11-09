@@ -17,7 +17,13 @@ Install using npm: `npm install foscam-client`
 ```JavaScript
 var Foscam = require('foscam-client');
 
-var camera = new Foscam('my-username', 'bad-password1', '192.168.0.50');
+var camera = new Foscam({
+  username: 'my-username',
+  password: 'bad-password1',
+  host: '192.168.0.50',
+  port: 88, // default
+  protocol: 'http', // default
+});
 
 // Get saved presets on the camera
 var getPointList = camera.getPTZPresetPointList();
