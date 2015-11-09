@@ -1,3 +1,5 @@
+'use strict';
+
 var config = {
     username: 'myusername',
     password: 'badpassword1',
