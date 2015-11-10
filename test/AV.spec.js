@@ -1,6 +1,7 @@
 'use strict';
 var Foscam = require('../lib');
 var sinon = require('sinon');
+var Q = require('q');
 var assertCalledWith = sinon.assert.calledWithMatch;
 var assertCalled = sinon.assert.calledOnce;
 var cam;
@@ -12,8 +13,8 @@ describe('Foscam: AV', function() {
             password: 'bar',
             host: '192.168.1.50'
         });
-        cam.get = sinon.stub(cam, 'get').returns(new Promise(function() {}));
-        cam.getRaw = sinon.stub(cam, 'getRaw').returns(new Promise(function() {}));
+        cam.get = sinon.stub(cam, 'get').returns(new Q.Promise(function() {}));
+        cam.getRaw = sinon.stub(cam, 'getRaw').returns(new Q.Promise(function() {}));
         cam.notImplemented = sinon.stub(cam, 'notImplemented');
     });
 
