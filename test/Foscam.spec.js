@@ -89,5 +89,15 @@ describe('Foscam', function() {
                 assert.equal(parsed, null);
             });
         });
+    });
+
+    it('throws when a function is not implemented', function() {
+        var cam = new Foscam({
+            username: 'foo',
+            password: 'bar',
+            host: '192.168.1.50'
+        });
+
+        assert.throws(cam.notImplemented);
     })
 });

@@ -41,9 +41,16 @@ describe('Foscam: User', function() {
         assertCalled(cam.notImplemented);
     });
 
-    it('logIn', function() {
-        cam.logIn({username: 'foo', password: 'bar'});
-        assertCalledWith(cam.get, 'logIn', {usrName: 'foo', pwd: 'bar'});
+    describe('logIn', function() {
+        it('defaults to the config username and password', function() {
+            cam.logIn();
+            assertCalledWith(cam.get, 'logIn', {usrName: 'foo', pwd: 'bar'});
+        });
+
+        it('accepts a different username and password', function() {
+            cam.logIn({username: 'noone', password: '1234'});
+            assertCalledWith(cam.get, 'logIn', {usrName: 'noone', pwd: '1234'});
+        });
     });
 
     it('logOut', function() {
