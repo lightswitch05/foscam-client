@@ -31,12 +31,12 @@ describe('Foscam: System', function() {
         assertCalledWith(cam.get, 'exportConfig');
     });
 
-    it('importConfig', function() {
+    it('importConfig -- not implemented', function() {
         cam.importConfig();
         assertCalled(cam.notImplemented);
     });
 
-    it('fwUpgrade', function() {
+    it('fwUpgrade -- not implemented', function() {
         cam.fwUpgrade();
         assertCalled(cam.notImplemented);
     });

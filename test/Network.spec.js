@@ -22,7 +22,7 @@ describe('Foscam: Network', function() {
             assertCalledWith(cam.get, 'getIPInfo');
         });
 
-        it('set', function() {
+        it('set -- not implemented', function() {
             cam.setIpInfo();
             assertCalled(cam.notImplemented);
         });
@@ -46,7 +46,7 @@ describe('Foscam: Network', function() {
             })
         });
 
-        it('setSettings', function() {
+        it('setSettings -- not implemented', function() {
             cam.setWifiSetting();
             assertCalled(cam.notImplemented);
         });
@@ -63,7 +63,7 @@ describe('Foscam: Network', function() {
             assertCalledWith(cam.get, 'getPortInfo');
         });
 
-        it('set', function() {
+        it('set -- not implemented', function() {
             cam.setPortInfo();
             assertCalled(cam.notImplemented);
         });
@@ -75,7 +75,7 @@ describe('Foscam: Network', function() {
             assertCalledWith(cam.get, 'getUPnPConfig');
         });
 
-        it('set', function() {
+        it('set -- not implemented', function() {
             cam.setUPnPConfig();
             assertCalled(cam.notImplemented);
         });
@@ -87,7 +87,7 @@ describe('Foscam: Network', function() {
             assertCalledWith(cam.get, 'getDDNSConfig');
         });
 
-        it('set', function() {
+        it('set -- not implemented', function() {
             cam.setDDNSConfig();
             assertCalled(cam.notImplemented);
         });
@@ -99,12 +99,12 @@ describe('Foscam: Network', function() {
             assertCalledWith(cam.get, 'getFtpConfig');
         });
 
-        it('set', function() {
+        it('set -- not implemented', function() {
             cam.setFtpConfig();
             assertCalled(cam.notImplemented);
         });
 
-        it('test', function() {
+        it('test -- not implemented', function() {
             cam.testFtpServer();
             assertCalled(cam.notImplemented);
         });
@@ -116,12 +116,12 @@ describe('Foscam: Network', function() {
             assertCalledWith(cam.get, 'getSMTPConfig');
         });
 
-        it('set', function() {
+        it('set -- not implemented', function() {
             cam.setSMTPConfig();
             assertCalled(cam.notImplemented);
         });
 
-        it('test', function() {
+        it('test -- not implemented', function() {
             cam.smtpTest();
             assertCalled(cam.notImplemented);
         })
@@ -135,7 +135,7 @@ describe('Foscam: Network', function() {
         });
 
         describe('enabled', function() {
-            it('set', function() {
+            it('set -- not implemented', function() {
                 cam.setP2PEnable();
                 assertCalled(cam.notImplemented);
             });
@@ -147,7 +147,7 @@ describe('Foscam: Network', function() {
         });
 
         describe('port', function() {
-            it('set', function() {
+            it('set -- not implemented', function() {
                 cam.setP2PPort();
                 assertCalled(cam.notImplemented);
             });
@@ -160,7 +160,7 @@ describe('Foscam: Network', function() {
     });
 
     describe('PPPoEConfig', function() {
-        it('set', function() {
+        it('set -- not implemented', function() {
             cam.setPPPoEConfig();
             assertCalled(cam.notImplemented);
         });

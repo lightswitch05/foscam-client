@@ -22,7 +22,7 @@ describe('Foscam: Device', function() {
             assertCalledWith(cam.get, 'getSystemTime');
         });
 
-        it('set', function() {
+        it('set -- not implemented', function() {
             cam.setSystemTime();
             assertCalled(cam.notImplemented);
         });
@@ -35,7 +35,7 @@ describe('Foscam: Device', function() {
                 assertCalledWith(cam.get, 'getInfraLedConfig');
             });
 
-            it('set', function() {
+            it('set -- not implemented', function() {
                 cam.setInfraLedConfig();
                 assertCalled(cam.notImplemented);
             });
@@ -59,7 +59,7 @@ describe('Foscam: Device', function() {
                 assertCalledWith(cam.get, 'getScheduleInfraLedConfig');
             });
 
-            it('set', function() {
+            it('set -- not implemented', function() {
                 cam.setScheduleInfraLedConfig();
                 assertCalled(cam.notImplemented);
             });
@@ -67,12 +67,12 @@ describe('Foscam: Device', function() {
     });
 
     describe('DevName', function() {
-        it('get', function() {
+        it('get', function () {
             cam.getDevName();
             assertCalledWith(cam.get, 'getDevName');
         });
 
-        it('setDevName', function() {
+        it('set', function () {
             cam.setDevName('Cam1');
             assertCalledWith(cam.get, 'setDevName', {devName: 'Cam1'});
         });
@@ -148,11 +148,6 @@ describe('Foscam: Device', function() {
         assertCalledWith(cam.get, 'getProductOnvifFlag');
     });
 
-    it('getProductOnvifFlag', function() {
-        cam.getProductOnvifFlag();
-        assertCalledWith(cam.get, 'getProductOnvifFlag');
-    });
-
     it('getProductP2pFlag', function() {
         cam.getProductP2pFlag();
         assertCalledWith(cam.get, 'getProductP2pFlag');
@@ -188,7 +183,7 @@ describe('Foscam: Device', function() {
         assertCalledWith(cam.get, 'getGeneratePubKey');
     });
 
-    it('toolResetToFactory', function() {
+    it('toolResetToFactory -- not implemented', function() {
         cam.toolResetToFactory();
         assertCalled(cam.notImplemented);
     });

@@ -21,13 +21,13 @@ describe('Foscam: Misc', function() {
         assertCalledWith(cam.get, 'getFirewallConfig');
     });
 
-    it('setFirewallConfig', function() {
+    it('setFirewallConfig -- not implemented', function() {
         cam.setFirewallConfig();
         assertCalled(cam.notImplemented);
     });
 
     describe('getLog', function() {
-        it('defaults offset and count', function() {
+        it('defaults offset and count', function () {
             cam.getLog();
             assertCalledWith(cam.get, 'getLog', {
                 offset: 0,
@@ -35,16 +35,16 @@ describe('Foscam: Misc', function() {
             });
         });
 
-        it('gets the second page', function() {
-            cam.getLog({ offset: 20 });
+        it('gets the second page', function () {
+            cam.getLog({offset: 20});
             assertCalledWith(cam.get, 'getLog', {
                 offset: 20,
                 count: 20
             });
         });
 
-        it('only gets 5 logs', function() {
-            cam.getLog({ count: 5 });
+        it('only gets 5 logs', function () {
+            cam.getLog({count: 5});
             assertCalledWith(cam.get, 'getLog', {
                 offset: 0,
                 count: 5

@@ -16,38 +16,38 @@ describe('Foscam: User', function() {
         cam.notImplemented = sinon.stub(cam, 'notImplemented');
     });
 
-    it('addAccount', function() {
+    it('addAccount -- not implemented', function() {
         cam.addAccount();
         assertCalled(cam.notImplemented);
     });
 
-    it('delAccount', function() {
+    it('delAccount -- not implemented', function() {
         cam.delAccount();
         assertCalled(cam.notImplemented);
     });
 
-    it('changePassword', function() {
+    it('changePassword -- not implemented', function() {
         cam.changePassword();
         assertCalled(cam.notImplemented);
     });
 
-    it('changeUserName', function() {
+    it('changeUserName -- not implemented', function() {
         cam.changeUserName();
         assertCalled(cam.notImplemented);
     });
 
-    it('changeUserNameAndPwdTogether', function() {
+    it('changeUserNameAndPwdTogether -- not implemented', function() {
         cam.changeUserNameAndPwdTogether();
         assertCalled(cam.notImplemented);
     });
 
     describe('logIn', function() {
-        it('defaults to the config username and password', function() {
+        it('defaults to the config username and password', function () {
             cam.logIn();
             assertCalledWith(cam.get, 'logIn', {usrName: 'foo', pwd: 'bar'});
         });
 
-        it('accepts a different username and password', function() {
+        it('accepts a different username and password', function () {
             cam.logIn({username: 'noone', password: '1234'});
             assertCalledWith(cam.get, 'logIn', {usrName: 'noone', pwd: '1234'});
         });
@@ -68,7 +68,7 @@ describe('Foscam: User', function() {
         assertCalledWith(cam.get, 'getUserList');
     });
 
-    it('usrBeatHeart', function() {
+    it('usrBeatHeart -- not implemented', function() {
         cam.usrBeatHeart();
         assertCalled(cam.notImplemented);
     });
