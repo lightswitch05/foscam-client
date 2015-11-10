@@ -1,42 +1,44 @@
-require('babel-core/register');
-const Foscam = require('../lib');
-const assert = require('chai').assert;
+'use strict';
+var Foscam = require('../lib');
+var assert = require('chai').assert;
 
-describe('Foscam', () => {
-  it('exports the Foscam class', () => {
-    assert.isFunction(Foscam);
-    assert.instanceOf(new Foscam({}), Foscam);
-  });
-
-  it('throws when options object is ommitted', () => {
-    assert.throws(() => new Foscam(null));
-  });
-
-  it('creates the correct API url', () => {
-    const cam = new Foscam({
-      username: 'foo',
-      password: 'bar',
-      host: '192.168.1.50',
-      port: 443,
-      protocol: 'https'
+describe('Foscam', function() {
+    it('exports the Foscam class', function() {
+        assert.isFunction(Foscam);
+        assert.instanceOf(new Foscam({}), Foscam);
     });
 
-    assert.equal(cam.url, 'https://192.168.1.50:443/cgi-bin/CGIProxy.fcgi');
-  });
+    it('throws when options object is ommitted', function() {
+        assert.throws(function() {
+            return new Foscam(null);
+        });
+    });
 
-  it('converts numbers to boolean', () => {
-    const obj = {num: 1};
+    it('creates the correct API url', function() {
+        var cam = new Foscam({
+            username: 'foo',
+            password: 'bar',
+            host: '192.168.1.50',
+            port: 443,
+            protocol: 'https'
+        });
 
-    Foscam.numberToBoolean(obj, 'num');
-    assert.equal(obj.num, true);
+        assert.equal(cam.url, 'https://192.168.1.50:443/cgi-bin/CGIProxy.fcgi');
+    });
 
-    obj.num = 0;
-    Foscam.numberToBoolean(obj, 'num');
-    assert.equal(obj.num, false);
-  });
+    it('converts numbers to boolean', function() {
+        var obj = {num: 1};
 
-  it('convers a boolean to a number', () => {
-    assert.equal(Foscam.booleanToNumber(true), 1);
-    assert.equal(Foscam.booleanToNumber(false), 0);
-  });
+        Foscam.numberToBoolean(obj, 'num');
+        assert.equal(obj.num, true);
+
+        obj.num = 0;
+        Foscam.numberToBoolean(obj, 'num');
+        assert.equal(obj.num, false);
+    });
+
+    it('convers a boolean to a number', function() {
+        assert.equal(Foscam.booleanToNumber(true), 1);
+        assert.equal(Foscam.booleanToNumber(false), 0);
+    });
 });
