@@ -99,5 +99,5 @@ describe('Foscam', function() {
         });
 
         assert.throws(cam.notImplemented);
-    })
+    });
 });

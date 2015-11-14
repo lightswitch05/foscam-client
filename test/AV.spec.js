@@ -191,10 +191,10 @@ describe('Foscam: AV', function() {
 
             it('set', function() {
                 cam.setOSDSetting({
-                    isEnableTimeStamp: 1,
-                    isEnableDevName: 0,
+                    isEnableTimeStamp: true,
+                    isEnableDevName: false,
                     dispPos: 0,
-                    isEnableOSDMask: 1
+                    isEnableOSDMask: true
                 });
                 assertCalledWith(cam.get, 'setOSDSetting', {
                     isEnableTimeStamp: 1,
@@ -230,7 +230,7 @@ describe('Foscam: AV', function() {
             });
 
             it('set', function() {
-                cam.setOSDMask(0);
+                cam.setOSDMask(false);
                 assertCalledWith(cam.get, 'setOSDMask', {isEnabledOSDMask: 0});
             });
         });
@@ -253,11 +253,14 @@ describe('Foscam: AV', function() {
     describe('LocalAlarmRecordConfig', function() {
         it('set', function() {
             var params = {
-                isEnableLocalAlarmRecord: 1,
+                isEnableLocalAlarmRecord: true,
                 localAlarmRecordSecs: 4
             };
             cam.setLocalAlarmRecordConfig(params);
-            assertCalledWith(cam.get, 'setLocalAlarmRecordConfig', params);
+            assertCalledWith(cam.get, 'setLocalAlarmRecordConfig', {
+                isEnableLocalAlarmRecord: 1,
+                localAlarmRecordSecs: 4
+            });
         });
 
         it('get', function() {
@@ -303,7 +306,7 @@ describe('Foscam: AV', function() {
                 cam.setScheduleSnapConfig();
                 assertCalled(cam.notImplemented);
             });
-        })
+        });
     });
 
     it('getRecordList', function() {
@@ -329,12 +332,16 @@ describe('Foscam: AV', function() {
 
         it('set', function() {
             var params = {
-                isEnablePreRecord: 1,
+                isEnablePreRecord: true,
                 preRecordSecs: 5,
                 alarmRecordSecs: 2
             };
             cam.setAlarmRecordConfig(params);
-            assertCalledWith(cam.get, 'setAlarmRecordConfig', params);
+            assertCalledWith(cam.get, 'setAlarmRecordConfig', {
+                isEnablePreRecord: 1,
+                preRecordSecs: 5,
+                alarmRecordSecs: 2
+            });
         });
     });
 
@@ -374,7 +381,7 @@ describe('Foscam: AV', function() {
 
     describe('PCAudioAlarmCfg', function() {
         it('set', function() {
-            cam.setPCAudioAlarmCfg(0);
+            cam.setPCAudioAlarmCfg(false);
             assertCalledWith(cam.get, 'setPCAudioAlarmCfg', {isEnablePCAudioAlarm: 0});
         });
 
