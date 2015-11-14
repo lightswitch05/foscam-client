@@ -17,7 +17,8 @@
     "test": "gulp",
     "docs": "./node_modules/.bin/jsdoc --configure .jsdoc.json",
     "prepublish": "gulp prepublish",
-    "lint": "gulp lint"
+    "lint": "gulp lint",
+    "serve-docs": "node ./serve-docs.js"
   },
   "repository": {
     "type": "git",
@@ -31,19 +32,20 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "express": "^4.13.3",
+    "gulp": "^3.6.0",
+    "gulp-coveralls": "^0.1.0",
+    "gulp-eslint": "^1.1.0-rc-3",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-nsp": "^2.1.0",
+    "gulp-plumber": "^1.0.0",
     "jsdoc": "^3.3.3",
     "minami": "^1.1.1",
     "mocha": "^2.3.3",
     "mockery": "^1.4.0",
     "sinon": "^1.17.2",
-    "uglify-js": "^2.5.0",
-    "gulp": "^3.6.0",
-    "gulp-eslint": "^1.1.0-rc-3",
-    "gulp-exclude-gitignore": "^1.0.0",
-    "gulp-istanbul": "^0.9.0",
-    "gulp-mocha": "^2.0.0",
-    "gulp-plumber": "^1.0.0",
-    "gulp-nsp": "^2.1.0",
-    "gulp-coveralls": "^0.1.0"
+    "uglify-js": "^2.5.0"
   }
 }
