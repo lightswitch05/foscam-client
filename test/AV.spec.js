@@ -406,7 +406,17 @@ describe('Foscam: AV', function() {
         });
     });
 
+    describe('DeFrameLevel', function() {
+        it('setDeFrameLevel', function() {
+            cam.setDeFrameLevel(1);
+            assertCalledWith(cam.get, 'setDeFrameLevel', {level: 1});
+        });
 
+        it('getDeFrameLevel', function() {
+            cam.getDeFrameLevel();
+            assertCalledWith(cam.get, 'getDeFrameLevel');
+        });
+    });
 
     afterEach(function() {
         cam.get.reset();
