@@ -42,12 +42,12 @@ describe('Foscam: User', function() {
     });
 
     describe('logIn', function() {
-        it('defaults to the config username and password', function () {
+        it('defaults to the config username and password', function() {
             cam.logIn();
             assertCalledWith(cam.get, 'logIn', {usrName: 'foo', pwd: 'bar'});
         });
 
-        it('accepts a different username and password', function () {
+        it('accepts a different username and password', function() {
             cam.logIn({username: 'noone', password: '1234'});
             assertCalledWith(cam.get, 'logIn', {usrName: 'noone', pwd: '1234'});
         });

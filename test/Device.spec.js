@@ -67,12 +67,12 @@ describe('Foscam: Device', function() {
     });
 
     describe('DevName', function() {
-        it('get', function () {
+        it('get', function() {
             cam.getDevName();
             assertCalledWith(cam.get, 'getDevName');
         });
 
-        it('set', function () {
+        it('set', function() {
             cam.setDevName('Cam1');
             assertCalledWith(cam.get, 'setDevName', {devName: 'Cam1'});
         });

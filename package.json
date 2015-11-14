@@ -16,7 +16,8 @@
   "scripts": {
     "test": "gulp",
     "docs": "./node_modules/.bin/jsdoc --configure .jsdoc.json",
-    "prepublish": "gulp prepublish"
+    "prepublish": "gulp prepublish",
+    "lint": "gulp lint"
   },
   "repository": {
     "type": "git",

@@ -56,5 +56,12 @@ gulp.task('coveralls', ['test'], function() {
         .pipe(coveralls());
 });
 
+gulp.task('lint', function() {
+    return gulp.src(['lib/**/*.js', 'test/**/*.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
 gulp.task('prepublish', ['nsp']);
-gulp.task('default', ['static', 'test', 'coveralls']);
+gulp.task('default', ['static', 'lint', 'test', 'coveralls']);

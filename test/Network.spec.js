@@ -43,7 +43,7 @@ describe('Foscam: Network', function() {
             it('gets a different page number', function() {
                 cam.getWifiList(2);
                 assertCalledWith(cam.get, 'getWifiList', {startNo: 2});
-            })
+            });
         });
 
         it('setSettings -- not implemented', function() {
@@ -124,7 +124,7 @@ describe('Foscam: Network', function() {
         it('test -- not implemented', function() {
             cam.smtpTest();
             assertCalled(cam.notImplemented);
-        })
+        });
     });
 
     describe('P2P', function() {
