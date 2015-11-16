@@ -30,7 +30,7 @@ describe('Foscam: AV', function() {
 
     it('setContrast', function() {
         cam.setContrast(30);
-        assertCalledWith(cam.get, 'setContrast', {contrast: 30});
+        assertCalledWith(cam.get, 'setContrast', {constrast: 30});
     });
 
     it('setHue', function() {
@@ -46,6 +46,11 @@ describe('Foscam: AV', function() {
     it('setSharpness', function() {
         cam.setSharpness(20);
         assertCalledWith(cam.get, 'setSharpness', {sharpness: 20});
+    });
+
+    it('setDenoiseLevel', function() {
+        cam.setDenoiseLevel(20);
+        assertCalledWith(cam.get, 'setDenoiseLevel', {level: 20});
     });
 
     it('resetImageSetting', function() {
@@ -302,9 +307,28 @@ describe('Foscam: AV', function() {
                 assertCalledWith(cam.get, 'getScheduleSnapConfig');
             });
 
-            it('set - not implemented', function() {
-                cam.setScheduleSnapConfig();
-                assertCalled(cam.notImplemented);
+            it('set', function() {
+                cam.setScheduleSnapConfig({
+                    isEnable: true,
+                    snapInterval: 1,
+                    schedule1: 1,
+                    schedule2: 1,
+                    schedule3: 1,
+                    schedule4: 1,
+                    schedule5: 1,
+                    schedule6: 1
+
+                });
+                assertCalledWith(cam.get, 'setScheduleSnapConfig', {
+                    isEnable: 1,
+                    snapInterval: 1,
+                    schedule1: 1,
+                    schedule2: 1,
+                    schedule3: 1,
+                    schedule4: 1,
+                    schedule5: 1,
+                    schedule6: 1
+                });
             });
         });
     });
@@ -356,9 +380,24 @@ describe('Foscam: AV', function() {
             assertCalledWith(cam.get, 'getScheduleRecordConfig');
         });
 
-        it('set -- not implemented', function() {
-            cam.setScheduleRecordConfig();
-            assertCalled(cam.notImplemented);
+        it('set', function() {
+            var config = {
+                isEnable: true,
+                recordLevel: 1,
+                spaceFullMode: 1,
+                isEnableAudio: true,
+                schedule1: 0,
+                schedule2: 0,
+                schedule3: 0,
+                schedule4: 0,
+                schedule5: 0,
+                schedule6: 0
+            };
+
+            cam.setScheduleRecordConfig(config);
+            config.isEnable = 1;
+            config.isEnableAudio = 1;
+            assertCalledWith(cam.get, 'setScheduleRecordConfig', config);
         });
     });
 
@@ -407,9 +446,9 @@ describe('Foscam: AV', function() {
             assertCalled(cam.notImplemented);
         });
 
-        it('delete -- not implemented', function() {
-            cam.delMultiDev();
-            assertCalled(cam.notImplemented);
+        it('delete', function() {
+            cam.delMultiDev(2);
+            assertCalledWith(cam.get, 'delMultiDev', {chnnl: 2});
         });
     });
 
