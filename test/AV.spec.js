@@ -282,7 +282,7 @@ describe('Foscam: AV', function() {
 
         it('snapPicture2', function() {
             cam.snapPicture2();
-            assertCalledWith(cam.getRaw, cam.url, {qs: {cmd: 'snapPicture2'}});
+            assertCalledWith(cam.get, 'snapPicture2');
         });
 
         describe('config', function() {
