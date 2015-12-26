@@ -277,12 +277,12 @@ describe('Foscam: AV', function() {
     describe('Snap', function() {
         it('snapPicture', function() {
             cam.snapPicture();
-            assertCalledWith(cam.getRaw, cam.url, {qs: {cmd: 'snapPicture'}});
+            assertCalledWith(cam.getRaw, 'snapPicture');
         });
 
         it('snapPicture2', function() {
             cam.snapPicture2();
-            assertCalledWith(cam.get, 'snapPicture2');
+            assertCalledWith(cam.getRaw, 'snapPicture2', {}, {encoding: null});
         });
 
         describe('config', function() {
