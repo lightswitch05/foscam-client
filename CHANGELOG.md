@@ -1,3 +1,7 @@
+2015-12-16 - Release 0.2.1
+* Fixed snapPicture
+* Fixed snapPicture2
+
 2015-11-24 - Release 0.2.0
 --------------------------
 * BREAKING CHANGES
