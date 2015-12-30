@@ -1,4 +1,9 @@
+Unreleased
+--------------------------
+* Added an option to trust invalid (Foscam) certs.
+
 2015-12-16 - Release 0.2.1
+--------------------------
 * Fixed snapPicture
 * Fixed snapPicture2
 

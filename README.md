@@ -25,6 +25,7 @@ var camera = new Foscam({
   host: '192.168.0.50',
   port: 88, // default
   protocol: 'http', // default
+  rejectUnauthorizedCerts: true // default
 });
 
 // Get saved presets on the camera

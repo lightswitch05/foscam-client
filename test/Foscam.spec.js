@@ -3,6 +3,16 @@ var Foscam = require('../lib');
 var assert = require('chai').assert;
 
 describe('Foscam', function() {
+    it('defaults to valid certs only', function() {
+        var cam = new Foscam({});
+        assert.isTrue(cam.rejectUnauthorizedCerts);
+    });
+
+    it('allows to accept invalid certs', function() {
+        var cam = new Foscam({rejectUnauthorizedCerts: false});
+        assert.isFalse(cam.rejectUnauthorizedCerts);
+    });
+
     it('exports the Foscam class', function() {
         assert.isFunction(Foscam);
         assert.instanceOf(new Foscam({}), Foscam);
