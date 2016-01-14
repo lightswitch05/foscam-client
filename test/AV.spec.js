@@ -2,6 +2,7 @@
 var Foscam = require('../lib');
 var sinon = require('sinon');
 var Q = require('q');
+var assert = require('chai').assert;
 var assertCalledWith = sinon.assert.calledWithMatch;
 var assertCalled = sinon.assert.calledOnce;
 var cam;
@@ -59,8 +60,24 @@ describe('Foscam: AV', function() {
     });
 
     it('getMirrorAndFlipSetting', function() {
-        cam.getMirrorAndFlipSetting();
-        assertCalledWith(cam.get, 'getMirrorAndFlipSetting');
+        var camera = new Foscam({
+            username: 'foo',
+            password: 'bar',
+            host: '192.168.1.50'
+        });
+        sinon.stub(camera, 'getRaw').returns(
+            new Q('<CGI_Result>' +
+                  '  <result>0</result>' +
+                  '  <isMirror>0</isMirror>' +
+                  '  <isFlip>0</isFlip>' +
+                  '</CGI_Result>')
+        );
+        return camera.getMirrorAndFlipSetting().then(function(response){
+            assertCalledWith(camera.getRaw, 'getMirrorAndFlipSetting');
+            assert.equal(response.result, 0);
+            assert.isFalse(response.isMirror);
+            assert.isFalse(response.isFlip);
+        });
     });
 
     it('mirrorVideo', function() {
@@ -117,8 +134,60 @@ describe('Foscam: AV', function() {
     describe('Main Video Stream', function() {
         describe('Param', function() {
             it('get', function() {
-                cam.getVideoStreamParam();
-                assertCalledWith(cam.get, 'getVideoStreamParam');
+                var camera = new Foscam({
+                    username: 'foo',
+                    password: 'bar',
+                    host: '192.168.1.50'
+                });
+                sinon.stub(camera, 'getRaw').returns(
+                    new Q('<CGI_Result>' +
+                          '  <result>0</result>' +
+                          '  <resolution0>0</resolution0>' +
+                          '  <resolution1>0</resolution1>' +
+                          '  <resolution2>3</resolution2>' +
+                          '  <resolution3>0</resolution3>' +
+                          '  <bitRate0>2097152</bitRate0>' +
+                          '  <bitRate1>2097152</bitRate1>' +
+                          '  <bitRate2>1048576</bitRate2>' +
+                          '  <bitRate3>2097152</bitRate3>' +
+                          '  <frameRate0>30</frameRate0>' +
+                          '  <frameRate1>20</frameRate1>' +
+                          '  <frameRate2>15</frameRate2>' +
+                          '  <frameRate3>30</frameRate3>' +
+                          '  <GOP0>30</GOP0>' +
+                          '  <GOP1>60</GOP1>' +
+                          '  <GOP2>60</GOP2>' +
+                          '  <GOP3>30</GOP3>' +
+                          '  <isVBR0>1</isVBR0>' +
+                          '  <isVBR1>1</isVBR1>' +
+                          '  <isVBR2>1</isVBR2>' +
+                          '  <isVBR3>1</isVBR3>' +
+                          '</CGI_Result>')
+                );
+                return camera.getVideoStreamParam().then(function(response){
+                    assertCalledWith(camera.getRaw, 'getVideoStreamParam');
+                    assert.equal(response.result, 0);
+                    assert.equal(response.resolution0, 0);
+                    assert.equal(response.resolution1, 0);
+                    assert.equal(response.resolution2, 3);
+                    assert.equal(response.resolution3, 0);
+                    assert.equal(response.bitRate0, 2097152);
+                    assert.equal(response.bitRate1, 2097152);
+                    assert.equal(response.bitRate2, 1048576);
+                    assert.equal(response.bitRate3, 2097152);
+                    assert.equal(response.frameRate0, 30);
+                    assert.equal(response.frameRate1, 20);
+                    assert.equal(response.frameRate2, 15);
+                    assert.equal(response.frameRate3, 30);
+                    assert.equal(response.GOP0, 30);
+                    assert.equal(response.GOP1, 60);
+                    assert.equal(response.GOP2, 60);
+                    assert.equal(response.GOP3, 30);
+                    assert.isTrue(response.isVBR0);
+                    assert.isTrue(response.isVBR1);
+                    assert.isTrue(response.isVBR2);
+                    assert.isTrue(response.isVBR3);
+                });
             });
 
             it('set', function() {
@@ -166,6 +235,17 @@ describe('Foscam: AV', function() {
                 };
                 cam.setSubVideoStreamParam(params);
                 assertCalledWith(cam.get, 'setSubVideoStreamParam', params);
+
+                params = {
+                    streamType: 2,
+                    resolution: 0,
+                    bitRate: 20580,
+                    frameRate: 40,
+                    GOP: 30
+                };
+                cam.setSubVideoStreamParam(params);
+                params.isVBR = 0;
+                assertCalledWith(cam.get, 'setSubVideoStreamParam', params);
             });
         });
 
@@ -190,8 +270,30 @@ describe('Foscam: AV', function() {
     describe('OSD', function() {
         describe('setting', function() {
             it('get', function() {
-                cam.getOSDSetting();
-                assertCalledWith(cam.get, 'getOSDSetting');
+                var camera = new Foscam({
+                    username: 'foo',
+                    password: 'bar',
+                    host: '192.168.1.50'
+                });
+                sinon.stub(camera, 'getRaw').returns(
+                    new Q('<CGI_Result>' +
+                          '  <result>0</result>' +
+                          '  <isEnableTimeStamp>1</isEnableTimeStamp>' +
+                          '  <isEnableTempAndHumid>0</isEnableTempAndHumid>' +
+                          '  <isEnableDevName>1</isEnableDevName>' +
+                          '  <dispPos>0</dispPos>' +
+                          '  <isEnableOSDMask>0</isEnableOSDMask>' +
+                          '</CGI_Result>')
+                );
+                return camera.getOSDSetting().then(function(response){
+                    assertCalledWith(camera.getRaw, 'getOSDSetting');
+                    assert.equal(response.result, 0);
+                    assert.isTrue(response.isEnableTimeStamp);
+                    assert.isFalse(response.isEnableTempAndHumid);
+                    assert.isTrue(response.isEnableDevName);
+                    assert.equal(response.dispPos, 0);
+                    assert.isFalse(response.isEnableOSDMask);
+                });
             });
 
             it('set', function() {
@@ -230,8 +332,30 @@ describe('Foscam: AV', function() {
 
         describe('Mask', function() {
             it('get', function() {
-                cam.getOSDMask();
-                assertCalledWith(cam.get, 'getOSDMask');
+                var camera = new Foscam({
+                    username: 'foo',
+                    password: 'bar',
+                    host: '192.168.1.50'
+                });
+                sinon.stub(camera, 'getRaw').returns(
+                    new Q('<CGI_Result>' +
+                          '  <result>0</result>' +
+                          '  <isEnableTimeStamp>1</isEnableTimeStamp>' +
+                          '  <isEnableTempAndHumid>0</isEnableTempAndHumid>' +
+                          '  <isEnableDevName>1</isEnableDevName>' +
+                          '  <dispPos>0</dispPos>' +
+                          '  <isEnableOSDMask>0</isEnableOSDMask>' +
+                          '</CGI_Result>')
+                );
+                return camera.getOSDMask().then(function(response){
+                    assertCalledWith(camera.getRaw, 'getOSDMask');
+                    assert.equal(response.result, 0);
+                    assert.isTrue(response.isEnableTimeStamp);
+                    assert.isFalse(response.isEnableTempAndHumid);
+                    assert.isTrue(response.isEnableDevName);
+                    assert.equal(response.dispPos, 0);
+                    assert.isFalse(response.isEnableOSDMask);
+                });
             });
 
             it('set', function() {
@@ -269,8 +393,24 @@ describe('Foscam: AV', function() {
         });
 
         it('get', function() {
-            cam.getLocalAlarmRecordConfig();
-            assertCalledWith(cam.get, 'getLocalAlarmRecordConfig');
+            var camera = new Foscam({
+                username: 'foo',
+                password: 'bar',
+                host: '192.168.1.50'
+            });
+            sinon.stub(camera, 'getRaw').returns(
+                new Q('<CGI_Result>' +
+                      '  <result>0</result>' +
+                      '  <isEnableLocalAlarmRecord>0</isEnableLocalAlarmRecord>' +
+                      '  <localAlarmRecordSecs>30</localAlarmRecordSecs>' +
+                      '</CGI_Result>')
+            );
+            return camera.getLocalAlarmRecordConfig().then(function(response){
+                assertCalledWith(camera.getRaw, 'getLocalAlarmRecordConfig');
+                assert.equal(response.result, 0);
+                assert.isFalse(response.isEnableLocalAlarmRecord);
+                assert.equal(response.localAlarmRecordSecs, 30);
+            });
         });
     });
 
@@ -303,8 +443,38 @@ describe('Foscam: AV', function() {
 
         describe('schedule', function() {
             it('get', function() {
-                cam.getScheduleSnapConfig();
-                assertCalledWith(cam.get, 'getScheduleSnapConfig');
+                var camera = new Foscam({
+                    username: 'foo',
+                    password: 'bar',
+                    host: '192.168.1.50'
+                });
+                sinon.stub(camera, 'getRaw').returns(
+                    new Q('<CGI_Result>' +
+                          '  <result>0</result>' +
+                          '  <isEnable>0</isEnable>' +
+                          '  <snapInterval>2</snapInterval>' +
+                          '  <schedule0>0</schedule0>' +
+                          '  <schedule1>0</schedule1>' +
+                          '  <schedule2>0</schedule2>' +
+                          '  <schedule3>0</schedule3>' +
+                          '  <schedule4>0</schedule4>' +
+                          '  <schedule5>0</schedule5>' +
+                          '  <schedule6>0</schedule6>' +
+                          '</CGI_Result>')
+                );
+                return camera.getScheduleSnapConfig().then(function(response){
+                    assertCalledWith(camera.getRaw, 'getScheduleSnapConfig');
+                    assert.equal(response.result, 0);
+                    assert.isFalse(response.isEnable);
+                    assert.equal(response.snapInterval, 2);
+                    assert.equal(response.schedule0, 0);
+                    assert.equal(response.schedule1, 0);
+                    assert.equal(response.schedule2, 0);
+                    assert.equal(response.schedule3, 0);
+                    assert.equal(response.schedule4, 0);
+                    assert.equal(response.schedule5, 0);
+                    assert.equal(response.schedule6, 0);
+                });
             });
 
             it('set', function() {
@@ -376,8 +546,42 @@ describe('Foscam: AV', function() {
 
     describe('ScheduleRecordConfig', function() {
         it('get', function() {
-            cam.getScheduleRecordConfig();
-            assertCalledWith(cam.get, 'getScheduleRecordConfig');
+            var camera = new Foscam({
+                username: 'foo',
+                password: 'bar',
+                host: '192.168.1.50'
+            });
+            sinon.stub(camera, 'getRaw').returns(
+                new Q('<CGI_Result>' +
+                      '  <result>0</result>' +
+                      '  <isEnable>0</isEnable>' +
+                      '  <recordLevel>4</recordLevel>' +
+                      '  <spaceFullMode>0</spaceFullMode>' +
+                      '  <isEnableAudio>1</isEnableAudio>' +
+                      '  <schedule0>0</schedule0>' +
+                      '  <schedule1>0</schedule1>' +
+                      '  <schedule2>0</schedule2>' +
+                      '  <schedule3>0</schedule3>' +
+                      '  <schedule4>0</schedule4>' +
+                      '  <schedule5>0</schedule5>' +
+                      '  <schedule6>0</schedule6>' +
+                      '</CGI_Result>')
+            );
+            return camera.getScheduleRecordConfig().then(function(response){
+                assertCalledWith(camera.getRaw, 'getScheduleRecordConfig');
+                assert.equal(response.result, 0);
+                assert.isFalse(response.isEnable);
+                assert.equal(response.recordLevel, 4);
+                assert.equal(response.spaceFullMode, 0);
+                assert.isTrue(response.isEnableAudio);
+                assert.equal(response.schedule0, 0);
+                assert.equal(response.schedule1, 0);
+                assert.equal(response.schedule2, 0);
+                assert.equal(response.schedule3, 0);
+                assert.equal(response.schedule4, 0);
+                assert.equal(response.schedule5, 0);
+                assert.equal(response.schedule6, 0);
+            });
         });
 
         it('set', function() {
@@ -425,8 +629,22 @@ describe('Foscam: AV', function() {
         });
 
         it('get', function() {
-            cam.getPCAudioAlarmCfg();
-            assertCalledWith(cam.get, 'getPCAudioAlarmCfg');
+            var camera = new Foscam({
+                username: 'foo',
+                password: 'bar',
+                host: '192.168.1.50'
+            });
+            sinon.stub(camera, 'getRaw').returns(
+                new Q('<CGI_Result>' +
+                      '  <result>0</result>' +
+                      '  <isEnablePCAudioAlarm>0</isEnablePCAudioAlarm>' +
+                      '</CGI_Result>')
+            );
+            return camera.getPCAudioAlarmCfg().then(function(response){
+                assert.equal(response.result, 0);
+                assertCalledWith(camera.getRaw, 'getPCAudioAlarmCfg');
+                assert.isFalse(response.isEnablePCAudioAlarm);
+            });
         });
     });
 
