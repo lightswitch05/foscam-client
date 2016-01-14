@@ -1,6 +1,8 @@
-Unreleased
+2016-01-14 - Release 0.2.2
 --------------------------
 * Added an option to trust invalid (Foscam) certs.
+* Fixed some missed number->boolean conversions.
+* Improved testing.
 
 2015-12-16 - Release 0.2.1
 --------------------------
