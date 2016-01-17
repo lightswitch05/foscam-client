@@ -1,6 +1,7 @@
 Unreleased
 --------------------------
-* Updated dependencies
+* Improved testing.
+* Updated dependencies.
 
 2016-01-14 - Release 0.2.2
 --------------------------
