@@ -1,3 +1,7 @@
+Unreleased
+--------------------------
+* Updated dependencies
+
 2016-01-14 - Release 0.2.2
 --------------------------
 * Added an option to trust invalid (Foscam) certs.
