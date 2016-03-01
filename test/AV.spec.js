@@ -391,6 +391,25 @@ describe('Foscam: AV', function() {
             assertCalledWith(cam.get, 'setMotionDetectConfig');
         });
     });
+         
+    describe('MotionDetectConfig1', function() {
+        it('get', function() {
+            cam.getMotionDetectConfig1();
+            assertCalledWith(cam.get, 'getMotionDetectConfig1');
+        });
+                  
+        it('set', function() {
+            // TODO: flesh this out a bit
+            var params = {};
+            cam.setMotionDetectConfig1(params);
+            assertCalledWith(cam.get, 'setMotionDetectConfig1', params);
+        });
+                  
+        it('set without args', function() {
+            cam.setMotionDetectConfig1();
+            assertCalledWith(cam.get, 'setMotionDetectConfig1');
+        });
+    });
 
     describe('LocalAlarmRecordConfig', function() {
         it('set', function() {
