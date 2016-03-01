@@ -197,10 +197,16 @@ describe('Foscam: AV', function() {
                     bitRate: 20580,
                     frameRate: 40,
                     GOP: 30,
-                    isVBR: 0
+                    isVBR: false
                 };
                 cam.setVideoStreamParam(params);
+                params.isVBR = 0;
                 assertCalledWith(cam.get, 'setVideoStreamParam', params);
+            });
+
+            it('set defaults VBR to 0', function() {
+                cam.setVideoStreamParam();
+                assertCalledWith(cam.get, 'setVideoStreamParam', {isVBR: 0});
             });
         });
 
@@ -231,22 +237,19 @@ describe('Foscam: AV', function() {
                     bitRate: 20580,
                     frameRate: 40,
                     GOP: 30,
-                    isVBR: 0
-                };
-                cam.setSubVideoStreamParam(params);
-                assertCalledWith(cam.get, 'setSubVideoStreamParam', params);
-
-                params = {
-                    streamType: 2,
-                    resolution: 0,
-                    bitRate: 20580,
-                    frameRate: 40,
-                    GOP: 30
+                    isVBR: false
                 };
                 cam.setSubVideoStreamParam(params);
                 params.isVBR = 0;
                 assertCalledWith(cam.get, 'setSubVideoStreamParam', params);
             });
+
+            it('set defaults VBR to 0', function() {
+                cam.setSubVideoStreamParam();
+                assertCalledWith(cam.get, 'setSubVideoStreamParam', {isVBR: 0});
+            });
+
+
         });
 
         describe('type', function() {
@@ -309,6 +312,11 @@ describe('Foscam: AV', function() {
                     dispPos: 0,
                     isEnableOSDMask: 1
                 });
+            });
+
+            it('set without args', function() {
+                cam.setOSDSetting();
+                assertCalledWith(cam.get, 'setOSDSetting');
             });
         });
 
@@ -377,6 +385,11 @@ describe('Foscam: AV', function() {
             cam.setMotionDetectConfig(params);
             assertCalledWith(cam.get, 'setMotionDetectConfig', params);
         });
+
+        it('set without args', function() {
+            cam.setMotionDetectConfig();
+            assertCalledWith(cam.get, 'setMotionDetectConfig');
+        });
     });
 
     describe('LocalAlarmRecordConfig', function() {
@@ -390,6 +403,11 @@ describe('Foscam: AV', function() {
                 isEnableLocalAlarmRecord: 1,
                 localAlarmRecordSecs: 4
             });
+        });
+
+        it('set without args', function() {
+            cam.setLocalAlarmRecordConfig();
+            assertCalledWith(cam.get, 'setLocalAlarmRecordConfig');
         });
 
         it('get', function() {
@@ -536,6 +554,11 @@ describe('Foscam: AV', function() {
                 preRecordSecs: 5,
                 alarmRecordSecs: 2
             });
+        });
+
+        it('set without args', function() {
+            cam.setAlarmRecordConfig();
+            assertCalledWith(cam.get, 'setAlarmRecordConfig');
         });
     });
 

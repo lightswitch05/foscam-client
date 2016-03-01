@@ -1,6 +1,6 @@
 {
   "name": "foscam-client",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Node client sdk for the current H.264 Foscam cameras like the FI9821W, FI9831P, etc.P",
   "homepage": "https://github.com/lightswitch05/foscam-client",
   "author": "Daniel White <daniel@developerdan.com> (http://www.developerdan.com)",
@@ -27,7 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "q": "^1.4.1",
-    "request-promise": "^1.0.2",
+    "request-promise": "^2.0.0",
     "xml2js": "^0.4.12"
   },
   "devDependencies": {

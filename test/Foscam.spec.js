@@ -52,6 +52,18 @@ describe('Foscam', function() {
         assert.equal(Foscam.booleanToNumber(false), 0);
     });
 
+    it('does not 3 to a boolean', function() {
+        var obj = {num: 3};
+        Foscam.numberToBoolean(obj, 'num');
+        assert.equal(obj.num, 3);
+    });
+
+    it('number to boolean handles undefined args', function() {
+        Foscam.numberToBoolean(null, 'nothing');
+        Foscam.numberToBoolean({}, null);
+        Foscam.numberToBoolean({}, 'nothing');
+    });
+
     describe('parseResponse', function() {
         it('unwraps CGI Result', function() {
             var xml = '<CGI_Result>' +
