@@ -1,3 +1,7 @@
+2016-03-02 - Release 0.3.0
+--------------------------
+* Added `getMotionDetectConfig1` and `setMotionDetectConfig1` for model C2 cameras. Thanks [@rooi](https://github.com/rooi)!
+
 2016-02-29 - Release 0.2.3
 --------------------------
 * Improved testing.
