@@ -1,3 +1,8 @@
+2016-10-16 - Release 0.4.0
+--------------------------
+* Fixed certain MAC addresses from being converted into numbers. Thanks [@jamieburchell](https://github.com/jamieburchell)!
+* Fixed config overwrite for multiple instances. Thanks [@lijamez](https://github.com/lijamez)!
+
 2016-03-02 - Release 0.3.0
 --------------------------
 * Added `getMotionDetectConfig1` and `setMotionDetectConfig1` for model C2 cameras. Thanks [@rooi](https://github.com/rooi)!
