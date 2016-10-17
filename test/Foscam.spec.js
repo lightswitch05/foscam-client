@@ -122,4 +122,30 @@ describe('Foscam', function() {
 
         assert.throws(cam.notImplemented);
     });
+
+    describe('parseNumbers', function() {
+        it('converts string numbers to int', function() {
+            assert.equal(Foscam.parseNumbers('123'), 123);
+        });
+
+        it('does not convert string without numbers', function() {
+            assert.equal(Foscam.parseNumbers('123abc'), '123abc');
+        });
+
+        it('does not convert string uppercase E', function() {
+            assert.equal(Foscam.parseNumbers('0600E0000000'), '0600E0000000');
+        });
+
+        it('does not convert string lowecase e', function() {
+            assert.equal(Foscam.parseNumbers('0600e0000000'), '0600e0000000');
+        });
+
+        it('does not convert null', function() {
+            assert.equal(Foscam.parseNumbers(null), null);
+        });
+
+        it('does not convert undefined', function() {
+            assert.equal(Foscam.parseNumbers(), undefined);
+        });
+    });
 });
