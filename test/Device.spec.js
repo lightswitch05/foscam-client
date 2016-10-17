@@ -49,7 +49,7 @@ describe('Foscam: Device', function() {
 
             it('close', function() {
                 cam.closeInfraLed();
-                assertCalled(cam.get, 'closeInfraLed');
+                assertCalledWith(cam.get, 'closeInfraLed');
             });
         });
 
