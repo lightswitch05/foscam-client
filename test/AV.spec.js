@@ -15,6 +15,7 @@ describe('Foscam: AV', function() {
             host: '192.168.1.50'
         });
         cam.get = sinon.stub(cam, 'get').returns(new Q.Promise(function() {}));
+        cam.stream = sinon.stub(cam, 'stream');
         cam.getRaw = sinon.stub(cam, 'getRaw').returns(new Q.Promise(function() {}));
         cam.notImplemented = sinon.stub(cam, 'notImplemented');
     });
@@ -267,7 +268,7 @@ describe('Foscam: AV', function() {
 
     it('getMJStream', function() {
         cam.getMJStream();
-        assertCalledWith(cam.get, 'GetMJStream');
+        assertCalledWith(cam.stream, 'GetMJStream');
     });
 
     describe('OSD', function() {
