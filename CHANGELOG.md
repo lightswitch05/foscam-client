@@ -1,3 +1,7 @@
+2018-02-09 - Release 0.5.0
+--------------------------
+* Fix handling of MJPEG streaming. Thanks [@pferreir](https://github.com/pferreir)!
+
 2016-10-16 - Release 0.4.0
 --------------------------
 * Fixed certain MAC addresses from being converted into numbers. Thanks [@jamieburchell](https://github.com/jamieburchell)!
